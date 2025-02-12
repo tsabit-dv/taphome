@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Admin Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <script>
+        function toggleSidebar() {
+            let sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("-translate-x-full");
+        }
+    </script>
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div id="sidebar" class="bg-white w-64 p-6 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
+            <div class="text-2xl font-bold mb-6">Logo</div>
+            <nav class="space-y-4">
+                <a class="flex items-center text-purple-600" href="#">
+                    <i class="fas fa-tachometer-alt mr-3"></i>
+                    Dashboard
+                </a>
+            </nav>
+            <button class="mt-6 bg-purple-600 text-white py-2 px-4 rounded flex items-center">
+                <i class="fas fa-plus mr-2"></i>
+                Add PIC
+            </button>
+        </div>
+        <!-- Main content -->
+        <div class="flex-1 p-6">
+            <!-- Top bar -->
+            <div class="flex justify-between items-center mb-6">
+                <button class="p-2 bg-purple-600 text-white rounded md:hidden" onclick="toggleSidebar()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="relative w-1/2">
+                    <input class="w-full p-2 pl-10 border rounded" placeholder="Search for projects" type="text"/>
+                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-bell text-gray-600"></i>
+                    <img alt="User profile picture" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/XP3tF9rPI7EV9uGA4x_OiqzqaGh3bNof5lO3jNu8PNM.jpg" width="40"/>
+                </div>
+            </div>
+            <!-- Dashboard content -->
+            <div class="bg-purple-600 text-white p-4 rounded mb-6 flex justify-between items-center">
+                <span>⭐ Taphome integrated Dashboard</span>
+                <button class="bg-purple-700 py-2 px-4 rounded">View more →</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                <div class="bg-white p-4 rounded shadow">
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-users text-orange-500 text-2xl"></i>
+                        <div>
+                            <p class="text-gray-600">Total Location</p>
+                            <p class="text-2xl font-bold">2</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-comments text-blue-500 text-2xl"></i>
+                        <div>
+                            <p class="text-gray-600">PIC On Duty</p>
+                            <p class="text-2xl font-bold">1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded shadow">
+                <h2 class="text-xl font-bold mb-4">Equipment Monitoring</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse border border-gray-300 text-sm text-gray-700">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th class="border p-2" rowspan="2">Equipment Name</th>
+                                <th class="border p-2" rowspan="2">Location</th>
+                                <th class="border p-2" colspan="2">Start</th>
+                                <th class="border p-2" colspan="2">Stop</th>
+                                <th class="border p-2" colspan="3">Phase R</th>
+                                <th class="border p-2" colspan="3">Phase S</th>
+                                <th class="border p-2" colspan="3">Phase T</th>
+                                <th class="border p-2" rowspan="2">PIC On Duty</th>
+                            </tr>
+                            <tr class="bg-gray-200">
+                                <th class="border p-2">Date</th>
+                                <th class="border p-2">Time</th>
+                                <th class="border p-2">Date</th>
+                                <th class="border p-2">Time</th>
+                                <th class="border p-2">Voltage</th>
+                                <th class="border p-2">Ampere</th>
+                                <th class="border p-2">Watt</th>
+                                <th class="border p-2">Voltage</th>
+                                <th class="border p-2">Ampere</th>
+                                <th class="border p-2">Watt</th>
+                                <th class="border p-2">Voltage</th>
+                                <th class="border p-2">Ampere</th>
+                                <th class="border p-2">Watt</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hover:bg-gray-100">
+                                <td class="border p-2">Generator A</td>
+                                <td class="border p-2">Building 1</td>
+                                <td class="border p-2">2025-02-12</td>
+                                <td class="border p-2">08:00</td>
+                                <td class="border p-2">2025-02-12</td>
+                                <td class="border p-2">18:00</td>
+                                <td class="border p-2">220V</td>
+                                <td class="border p-2">10A</td>
+                                <td class="border p-2">2200W</td>
+                                <td class="border p-2">230V</td>
+                                <td class="border p-2">12A</td>
+                                <td class="border p-2">2760W</td>
+                                <td class="border p-2">225V</td>
+                                <td class="border p-2">11A</td>
+                                <td class="border p-2">2475W</td>
+                                <td class="border p-2">John Doe</td>
+                            </tr>
+                            <tr class="hover:bg-gray-100">
+                                <td class="border p-2">Generator B</td>
+                                <td class="border p-2">Building 2</td>
+                                <td class="border p-2">2025-03-12</td>
+                                <td class="border p-2">08:00</td>
+                                <td class="border p-2">2025-02-12</td>
+                                <td class="border p-2">18:00</td>
+                                <td class="border p-2">220V</td>
+                                <td class="border p-2">10A</td>
+                                <td class="border p-2">2200W</td>
+                                <td class="border p-2">230V</td>
+                                <td class="border p-2">12A</td>
+                                <td class="border p-2">2760W</td>
+                                <td class="border p-2">225V</td>
+                                <td class="border p-2">11A</td>
+                                <td class="border p-2">2475W</td>
+                                <td class="border p-2">John Doe</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
